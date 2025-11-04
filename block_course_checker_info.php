@@ -29,6 +29,7 @@
 
 use local_course_checker\db\database_manager as dbm;
 use local_course_checker\task\queue_check_task;
+use local_course_checker\task\run_checker;
 use local_course_checker\db\model\checker;
 use local_course_checker\db\model\check;
 
@@ -66,8 +67,19 @@ class block_course_checker_info extends block_base {
      * @throws moodle_exception
      */
     public function get_content(): ?stdClass {
+
+        if (!has_capability('block/course_checker_info:view', $this->context)) {
+            return null;
+        }
+
+        if ($this->content !== null) {
+            return $this->content;
+        }
+
+        $this->content = new \stdClass();
+
         $data = new stdClass();
-        $data->action_url = new moodle_url('/local/course_checker/action.php'); // The URL of the action file.
+        $data->actionurl = new moodle_url('/local/course_checker/action.php'); // The URL of the action file.
         $course = $this->page->course;
         $data->courseid = $course->id; // The current course ID.
         $data->sesskey = sesskey(); // Moodle's CSRF protection token.
@@ -86,9 +98,14 @@ class block_course_checker_info extends block_base {
             }
         }
 
+        if ($runningadhoc = dbm::planned_adhoc_tasks('\\' . run_checker::class, $course->id)) {
+            if (array_filter($runningadhoc, fn($item) => $item->faildelay == 0)) {
+                $data->in_progress = true;
+            }
+        }
+
         // Render the Mustache template.
         $renderer = $this->page->get_renderer('block_course_checker_info');
-        $this->content = new stdClass();
         $this->content->text = $renderer->render_from_template('block_course_checker_info/block', $data);
         return $this->content;
     }
@@ -174,5 +191,4 @@ class block_course_checker_info extends block_base {
 
         return $statuspercentages;
     }
-
 }

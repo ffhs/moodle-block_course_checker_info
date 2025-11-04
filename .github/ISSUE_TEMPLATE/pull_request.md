@@ -1,3 +1,12 @@
+---
+name: Pull request
+about: Describe this issue template's purpose here.
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ## Summary
 
 ### Closes issue(s)
@@ -15,3 +24,7 @@
 
 ### Appendix
 Further information, screenshots, debugging messages, OS/browser/device information
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
