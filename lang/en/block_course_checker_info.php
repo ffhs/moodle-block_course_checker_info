@@ -28,3 +28,4 @@
 $string['pluginname'] = 'Course checker info';
 $string['privacy:metadata'] = 'The course checker is only a block display for local_course_checker.';
 $string['course_checker_info:addinstance'] = 'Add a new course checker info block';
+$string['course_checker_info:view'] = 'View the course checker block';
