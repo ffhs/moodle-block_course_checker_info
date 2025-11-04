@@ -28,3 +28,4 @@
 $string['pluginname'] = 'Kurs-Checker Info';
 $string['privacy:metadata'] = 'Der Kurs-Checker ist nur eine Blockanzeige für local_course_checker.';
 $string['course_checker_info:addinstance'] = 'Einen neuen Kurs-Checker-Infoblock hinzufügen';
+$string['course_checker_info:view'] = 'Den Kurs-Checker-Infoblock anzeigen';
