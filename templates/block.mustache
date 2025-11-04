@@ -23,11 +23,11 @@
 
     Example context (json):
     {
-        "action_url":{},
+        "actionurl":"https://example.com/action",
         "courseid":"3",
         "sesskey":"key",
-        "returnurl":{},
-        "reporturl":{},
+        "returnurl":"https://example.com/return",
+        "reporturl":"https://example.com/reporturl",
         "timestamp":"A date",
         "successful":77,
         "failed":23
@@ -60,7 +60,7 @@
     <button type="button" class="btn btn-primary btn-block" disabled>{{#str}}check_course_in_progress, local_course_checker{{/str}}</button>
 {{/in_progress}}
 {{^in_progress}}
-    <form method="get" action="{{action_url}}">
+    <form method="get" action="{{actionurl}}">
         <input type="hidden" name="action" value="run_all_checks">
         <input type="hidden" name="courseid" value="{{courseid}}">
         <input type="hidden" name="sesskey" value="{{sesskey}}">
