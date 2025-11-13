@@ -23,7 +23,7 @@ jobs:
 
       - name: Create Moodle-compatible ZIP
         run: |
-          rsync -av --exclude='.git*' --exclude='tests/' --exclude='.github/' --exclude='LICENSE.md' ./ ./${{ env.PLUGINNAME }}/
+          rsync -av --exclude='.git*' --exclude='tests/' --exclude='.github/' ./ ./${{ env.PLUGINNAME }}/
           zip -r ${{ env.PLUGINNAME }}.zip ${{ env.PLUGINNAME }}
 
       - name: Upload release ZIP
