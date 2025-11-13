@@ -1,4 +1,4 @@
-# Moodle Block Plugin: Course Checker Info
+# Course Checker Info [![Moodle Plugin CI](https://github.com/ffhs/moodle-block_course_checker_info/actions/workflows/moodle-plugin-ci.yml/badge.svg?branch=MOODLE_404_STABLE)](https://github.com/ffhs/moodle-block_course_checker_info/actions/workflows/moodle-plugin-ci.yml)
 
 This Moodle block plugin displays the current status of course checks performed by the `local_course_checker` plugin. It provides quick access to the latest results, timestamps, and rerun options directly from the course page.
 
