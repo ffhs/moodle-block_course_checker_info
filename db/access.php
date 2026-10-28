@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -28,23 +28,23 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [
-        'block/course_checker_info:addinstance' => [
-                'riskbitmask' => RISK_SPAM | RISK_XSS,
-                'captype' => 'write',
-                'contextlevel' => CONTEXT_BLOCK,
-                'archetypes' => [
-                        'editingteacher' => CAP_ALLOW,
-                        'manager' => CAP_ALLOW,
-                        'student' => CAP_PROHIBIT,
-                ],
-                'clonepermissionsfrom' => 'moodle/site:manageblocks',
+    'block/course_checker_info:addinstance' => [
+        'riskbitmask' => RISK_SPAM | RISK_XSS,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => [
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW,
+            'student' => CAP_PROHIBIT,
         ],
-        'block/course_checker_info:view' => [
-                'captype' => 'read',
-                'contextlevel' => CONTEXT_BLOCK,
-                'archetypes' => [
-                    'editingteacher' => CAP_ALLOW,
-                    'manager' => CAP_ALLOW,
-                ],
+        'clonepermissionsfrom' => 'moodle/site:manageblocks',
+    ],
+    'block/course_checker_info:view' => [
+        'captype' => 'read',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => [
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW,
         ],
+    ],
 ];

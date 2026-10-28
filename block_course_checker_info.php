@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -28,10 +28,10 @@
  */
 
 use local_course_checker\db\database_manager as dbm;
+use local_course_checker\db\model\check;
+use local_course_checker\db\model\checker;
 use local_course_checker\task\queue_check_task;
 use local_course_checker\task\run_checker;
-use local_course_checker\db\model\checker;
-use local_course_checker\db\model\check;
 
 /**
  * Block Course Checker.
@@ -122,7 +122,7 @@ class block_course_checker_info extends block_base {
         }
 
         $this->get_content();
-        return(empty($this->content->text) && empty($this->content->footer));
+        return (empty($this->content->text) && empty($this->content->footer));
     }
 
     /**
