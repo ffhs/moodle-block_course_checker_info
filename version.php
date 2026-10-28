@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -27,11 +27,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2025111300;
+$plugin->version = 2026083100;
 $plugin->requires = 2024042203;
-$plugin->release = 'v4.4-r1';
+$plugin->release = 'v4.4-r2';
 $plugin->component = 'block_course_checker_info';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
-        'local_course_checker' => 2025061000,
+    'local_course_checker' => 2026083100,
 ];

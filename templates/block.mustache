@@ -1,5 +1,5 @@
 {{!
-    This file is part of Moodle - http://moodle.org/
+    This file is part of Moodle - https://moodle.org/
 
     Moodle is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -46,10 +46,13 @@
         {{/error}}
         {{#failed}}
             <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{.}}" aria-valuemin="0" aria-valuemax="100" style="width: {{.}}%"></div>
-        {{/failed }}
+        {{/failed}}
         {{#warning}}
             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{.}}" aria-valuemin="0" aria-valuemax="100" style="width: {{.}}%"></div>
-        {{/warning }}
+        {{/warning}}
+        {{#info}}
+            <div class="progress-bar block_course_checker_info__check-info-bg-color" role="progressbar" aria-valuenow="{{.}}" aria-valuemin="0" aria-valuemax="100" style="width: {{.}}%"></div>
+        {{/info}}
         {{#successful}}
             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{.}}" aria-valuemin="0" aria-valuemax="100" style="width: {{.}}%"></div>
         {{/successful}}
@@ -68,4 +71,4 @@
         <button type="submit" class="btn btn-primary btn-block">{{#str}}check_course, local_course_checker{{/str}}</button>
     </form>
 {{/in_progress}}
-{{#timestamp}}<a href="{{reporturl}}" class="btn btn-secondary btn-block mt-2">{{#str}}messageprovider_result_label, local_course_checker{{/str}}</a>{{/timestamp}}
+<a href="{{reporturl}}" class="btn btn-secondary btn-block mt-2">{{#str}}messageprovider_result_label, local_course_checker{{/str}}</a>
